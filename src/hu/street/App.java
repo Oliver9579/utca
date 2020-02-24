@@ -26,5 +26,7 @@ public class App {
     private void run() {
         System.out.println("2.feladat");
         System.out.println("Az eladott telkek száma " + houseService.getSoldHousesCount());
+        System.out.println("3.feladat");
+        System.out.println(houseService.getLastSoldHouseDetails());
     }
 }

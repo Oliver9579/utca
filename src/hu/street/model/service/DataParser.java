@@ -7,6 +7,9 @@ import java.util.stream.Collectors;
 
 public class DataParser {
 
+    private static int oddNumber = -1;
+    private static int evenNumber = 0;
+
 
     public List<House> parse(List<String> lines) {
         return lines.stream()
@@ -17,10 +20,16 @@ public class DataParser {
 
     private House createHouse(String line) {
         String[] items = line.split(" ");
-        boolean uneven = getValue(items[0]) == 1;
+        boolean odd = getValue(items[0]) == 1;
         int fenceLength = getValue(items[1]);
         String color = items[2];
-        return new House(uneven, fenceLength, color);
+        int number;
+        if (odd) {
+            number = oddNumber += 2;
+        } else {
+            number = evenNumber += 2;
+        }
+        return new House(odd, fenceLength, color, number);
 
     }
 

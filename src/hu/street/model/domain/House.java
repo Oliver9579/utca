@@ -2,18 +2,20 @@ package hu.street.model.domain;
 
 public class House {
 
-    private final boolean uneven;
+    private final boolean odd;
     private final int fenceLength;
     private final String color;
+    private final int number;
 
-    public House(boolean uneven, int fenceLength, String color) {
-        this.uneven = uneven;
+    public House(boolean odd, int fenceLength, String color, int number) {
+        this.odd = odd;
         this.fenceLength = fenceLength;
         this.color = color;
+        this.number = number;
     }
 
-    public boolean isUneven() {
-        return uneven;
+    public boolean isOdd() {
+        return odd;
     }
 
     public int getFenceLength() {
@@ -22,5 +24,9 @@ public class House {
 
     public String getColor() {
         return color;
+    }
+
+    public int getNumber() {
+        return number;
     }
 }
